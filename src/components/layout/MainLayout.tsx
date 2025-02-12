@@ -19,11 +19,11 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Top Bar */}
-      <header className="fixed top-0 z-40 w-full border-b bg-background">
-        <div className="flex h-16 items-center px-4 gap-4">
+      <header className="fixed top-0 z-40 w-full bg-[#3c6382]">
+        <div className="flex h-16 items-center px-4 gap-4 text-white">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 hover:bg-accent rounded-md"
+            className="p-2 hover:bg-[#2c5170] rounded-md text-white"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -34,7 +34,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-16 z-30 h-[calc(100vh-4rem)] w-64 border-r bg-background transition-transform duration-300",
+          "fixed left-0 top-16 z-30 h-[calc(100vh-4rem)] w-64 bg-[#3c6382] transition-transform duration-300",
           !sidebarOpen && "-translate-x-full",
         )}
       >
@@ -45,7 +45,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 hover:bg-accent"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-white/80 transition-all hover:text-white hover:bg-[#2c5170]"
               >
                 <Icon className="h-5 w-5" />
                 {item.label}
